@@ -13,5 +13,5 @@ async def wait_n(n: int, max_delay: int = 10) -> List[float]:
     # Creating a list of task objects, each will run wait_random concurrently
     completed_tasks = await asyncio.gather(*tasks)
     # Awaiting the completion of all the tasks and gathering their results
-    return completed_tasks
+    return sorted(completed_tasks)
     # Returning the list of completed tasks' results (delays)
