@@ -25,21 +25,19 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         pass
 
-
     def index_range(page: int, page_size: int) -> tuple:
-        """ returns a tuple of size two containing start index and an end index"""
+        """return tuple of size two containing start index and an end index"""
         start_index = (page - 1) * page_size
         end_index = start_index + page_size
         return (start_index, end_index)
 
-
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            """ obtains the indexes and return corresponding pages """
-            assert type(page) == int and page > 0
-            assert type(page_size) == int and page_size > 0
-            start, end = Server.index_range(page, page_size)
-            pages = []
-            if start >= len(self.dataset()):
-                return pages
-            pages = self.dataset()
-            return pages[start:end]
+        """ obtains the indexes and return corresponding pages """
+        assert type(page) == int and page > 0
+        assert type(page_size) == int and page_size > 0
+        start, end = Server.index_range(page, page_size)
+        pages = []
+        if start >= len(self.dataset()):
+            return pages
+        pages = self.dataset()
+        return pages[start:end]
