@@ -1,5 +1,5 @@
-import  signUpUser from './4-user-promise';
-import  { uploadPhoto } from './utils';
+import signUpUser from './4-user-promise';
+import { uploadPhoto } from './5-photo-reject';
 
 export default function (firstName, lastName, fileName) {
   const userPromise = signUpUser(firstName, lastName)
